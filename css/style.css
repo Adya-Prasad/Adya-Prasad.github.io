@@ -335,18 +335,22 @@ margin-left: 15px;
 /* Publication Section */
 .publication-item {
     margin-bottom: 12px;
+    border: 1px solid #fff0eb;
+    border-radius: 6px;
+    padding: 0.5rem;
 }
 
 .publication-header {
     display: flex;
     justify-content: space-between;
-    text-align: center;
-    align-items: center;
+    text-align: left;
+    align-items: left;
+    margin-bottom: 0.5rem;
 }
 
 .publication-header span {
     background-color: #4e433f25;
-    display: inline-block;
+    display: ruby;
     margin: 0.2rem;
     padding: 0.3rem;
     border-radius: 3px;
@@ -390,7 +394,7 @@ margin-left: 15px;
 .skillset span {
     display: inline-block;
     margin: 0.7rem 0.3rem;
-    background-color: #4e433f25;
+    background-color: #5e534f18;
     margin-top: -25px;
     padding: 0.2rem;
     border-radius: 3px;
