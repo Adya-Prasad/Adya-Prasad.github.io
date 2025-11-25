@@ -289,12 +289,12 @@ margin-left: 15px;
 .project-wrapper {
     display: flex;
     flex-wrap: wrap; /* Allow items to wrap onto the next line */
-    justify-content: space-between; /* Optional: adds space between boxes */
+    justify-content: flex-start; /* Align items to the start */
     gap: 1rem; /* Optional: space between the boxes */
 }
 
 .project-box {
-    flex: 1 1 calc(33.333% - 1rem); /* Three per row, minus gap */
+    flex: 0 1 calc(33.333% - 1rem); /* Three per row, minus gap, no grow */
     box-sizing: border-box;
     margin-bottom: 1rem;
     padding: 0.5rem;
