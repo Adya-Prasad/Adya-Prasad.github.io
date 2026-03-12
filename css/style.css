@@ -1,7 +1,7 @@
 /* Reset and Base Styles */
 :root {
     --primary: #5a514e;
-    --primary-dark: #4b3329;
+    --primary-dark: #47362f;
     --secondary: #ad8b79;
 }
 
@@ -153,8 +153,8 @@ header {
     border: none;
     border-radius: 4px;
     padding: 4px 9px;
-    margin-top: 7px;
-    font-size: 0.8.2rem;
+    margin-top: 8px;
+    font-size: 0.9rem;
     color: white;
     display: block;
 }
@@ -300,6 +300,7 @@ margin-left: 15px;
     padding: 0.5rem;
     border: 1px solid rgba(218, 212, 210, 0.767);
     border-radius: 6px;
+    box-shadow: -1px 4px 5px 1px rgba(43, 35, 32, 0.068);
 }
 
 
@@ -324,8 +325,8 @@ margin-left: 15px;
 .project-skills span {
     background-color: #4e433f25;
     margin: 0.2rem;
-    padding: 0.2rem;
-    border-radius: 3px;
+    padding: 0.3rem 0.6rem;
+    border-radius: 10px;
     font-size: 0.7rem;
     text-align: center;
     align-items: center;
@@ -384,10 +385,8 @@ margin-left: 15px;
     margin-bottom: 1rem;
 }
 
-.skill-set {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem;
+.skillset {
+    margin-top: 0.4rem;
 }
 
 
