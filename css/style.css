@@ -26,7 +26,7 @@ body {
 }
 
 main {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 2px auto;
     margin-top: 15px;
 }
@@ -157,6 +157,7 @@ header {
     font-size: 0.9rem;
     color: white;
     display: block;
+    width: fit-content;
 }
 
 .secondary-btn a {
@@ -231,6 +232,7 @@ header {
     border: 1px solid rgba(192, 189, 188, 0.32);
     display: block;
     box-sizing: border-box;
+    transition: all 0.3s ease-in-out 0s;
 }
 
 .experience-item::before {
@@ -254,6 +256,10 @@ header {
     width: 30px;
     height: 2px;
     background: var(--secondary);
+}
+
+.experience-item:hover{
+    box-shadow: -1px 4px 5px 1px rgba(43, 35, 32, 0.05);
 }
 
 .experience-title {
@@ -294,15 +300,19 @@ margin-left: 15px;
 }
 
 .project-box {
-    flex: 0 1 calc(33.333% - 1rem); /* Three per row, minus gap, no grow */
+    flex: 0 1 calc(33.333% - 1rem);
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
     box-sizing: border-box;
     margin-bottom: 1rem;
-    padding: 0.5rem;
+    padding: 0.5rem; 
     border: 1px solid rgba(218, 212, 210, 0.767);
-    border-radius: 6px;
-    box-shadow: -1px 4px 5px 1px rgba(43, 35, 32, 0.068);
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
-
+.project-box:hover {
+    box-shadow: -1px 4px 5px 1px rgba(43, 35, 32, 0.06);
+}
 
 .project-title {
     margin: 0;
@@ -319,18 +329,28 @@ margin-left: 15px;
 
 .project-skills {
     display: flex;
-    margin-top: 6px;    
+    flex-wrap: wrap; 
+    gap: 0.5rem;     
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .project-skills span {
     background-color: #4e433f25;
-    margin: 0.2rem;
     padding: 0.3rem 0.6rem;
     border-radius: 10px;
     font-size: 0.7rem;
-    text-align: center;
-    align-items: center;
-    min-height: none;
+    white-space: nowrap; 
+    display: inline-block;
+    user-select: none;
+}
+
+/* Button Group - Align buttons in a row */
+.project-btn-group {
+    display: flex;
+    gap: 0.5rem;        
+    margin-top: auto;   
+    justify-content: flex-start; 
 }
 
 /* Publication Section */

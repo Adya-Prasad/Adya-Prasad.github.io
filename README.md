@@ -1,2 +1,2 @@
-# Adya-Prasad.github.io
+# Adya Prasad
 Adya-Prasad.github.io
