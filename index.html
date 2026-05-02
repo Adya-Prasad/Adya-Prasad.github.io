@@ -257,12 +257,7 @@
                 <div class="project-box">
                     <h3 class="project-title">Cupid: Agentic Social Media Content Generation Platform</h3>
                     <img src="assets/Cupid-agent-thumbnail.png" alt="Cupid-agent-thumbnail" class="project-img">
-                    <div class="project-desc">A production-deployed, multi-agent content generation system built on a
-                        <b>swarm agentic architecture</b> with 4 specialized agents. It handle high-dimensional tasks:
-                        Latent Persona Modeling for style alignment, real-time web retrieval, NLG (Natural Language
-                        Generation), semantic research, and RAG pipeline. A persona agent, a research agent, a composer
-                        agent handles structured LLM-based generation, while a security agent enforces adversarial
-                        content filtering and safety guardrails
+                    <div class="project-desc">A multi-agent system to generate platform-specific social content from natural-language prompts. <b>Four LangGraph agents</b> coordinate the pipeline: supervisor agent, personalization agent, research agent, and composer agent. The personalization agent decomposes user intent into five orthogonal search queries, the research agent runs parallel web retrieval through DuckDuckGo with trafilatura-based content extraction, the composer agent distills sources into atomic facts and generates three angle-diverse variants in parallel, and the trends service handles scheduled background ingestion from Google News RSS ranking articles per-user with BM25 and recency decay, hybrid memory layer and LLM chain for fallback: Groq, HuggingFace and local heuristics.
                     </div>
                     <div class="project-skills">
                         <span>multi-agent orchestration</span><span>MCP</span><span>RAG</span><span>Langchain</span>
