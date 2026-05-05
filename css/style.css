@@ -56,6 +56,10 @@ h3 {
     color: var(--primary);
 }
 
+.hor-line{
+    border-bottom: 1px solid #dbccc4;
+}
+
 
 .me {
     text-align: right;
@@ -391,6 +395,23 @@ margin-left: 15px;
     border: 1px solid #e5e7eb;
     border-radius: 8px;
     margin-bottom: 1rem;
+    width: -webkit-fill-available;
+}
+
+.contribution-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.contributon-logo img {
+    width: 2.35rem;
+    height: 2.35rem;
+    object-fit: contain;
+    margin-top: 4px;
+    border: 1px solid #dbccc4;
+    border-radius: 50%;
 }
 
 .contribution-title{
