@@ -238,18 +238,79 @@
                         </ul>
                     </div>
                 </div>
-
-
             </div>
         </div>
-
-        <div id="researches" style="display: none;">
-            <h2>RESEARCHES AND PAPERS</h2>
-            <div class="research-item">
-                <div class="research-title">research on Indian AI Eco system</div>
-                <div class="research-desc">Planning...</div>
-            </div>
+        <div id="open-source">
+            <h2>OPEN SOURCE CONTRIBUTIONS</h2>
+                <div class="contribution-item">
+                    <div class="contributon-logo"><img src="assets/huggingface-logo.png" alt="huggingface-logo"></div>                    
+                <div class="contribution-box">
+                    <div class="contribution-title">Hugging Face: Peft</div>
+                    <div class="contribution-desc">
+                        <b>1. Resolve issue #2944: ensure_weight_tying respects config + improved tests</b> <i>{PR #3171}</i><br>
+                        updated src/peft/utils/other.py in the set_additional_trainable_modules() and
+                        _get_module_names_tied_with_embedding() functions to respect the model config and also
+                        create test file
+                    </div>
+                    <div class="hor-line"></div>
+                    <div class="contribution-desc">
+                        <b>2.Experiment: LLaMA-Adapter benchmarking evaluation metrics suits</b> <i>{ISSUE #}</i><br><br>
+                        Conduct a experiement, benchmarking the LLaMA-Adapter for Conversation AI and Math reasoning. I configured (optimized) the adapter for the Llama-3.2-3B model, ran standardized training pipelines on the MetaMathQA dataset, and evaluated its memory efficiency and reasoning retention against baseline methods to provide data points to community.
+                    </div>
+                    </div>  
+                </div>
+                <div class="contribution-item">
+                    <div class="contributon-logo"><img src="assets/unsloth-logo.png" alt="unsloth-logo"></div>                    
+                <div class="contribution-box">
+                    <div class="contribution-title">Unsloth</div>
+                    <div class="contribution-desc">
+                        <b>https://github.com/unslothai/unsloth/issues/224 {➚}</b><br>
+                        solved the issue of breaking of exporting model to Colab. 
+                    </div>
+                </div>  
+                </div>                          
+            
         </div>
+        <div id="publications">
+                <h2>ARTICLES AND PUBLICATIONS</h2>
+                <div class="publication-item">
+                    <div class="publication-header">
+                        <h3>1. AushadiNet-GATv2: Graph Attention Network for Predicting Drug-Drug Interactions in
+                            Polypharmacy</h3>
+                        <span>India AI</span>
+                    </div>
+                    <div class="publication-desc">I researched and presented AushadhiNet-GATv2, a graph neural
+                        network
+                        architecture for predicting drug-drug interactions in polypharmacy. System addresses
+                        critical
+                        limitations of existing DDI prediction methods through multi-view molecular representation
+                        learning,
+                        hierarchical GATv2 message passing with residual connections, dual-head classification for
+                        interaction detection and mechanism prediction, and integration with patient-specific
+                        cardiovascular
+                        risk profiling</div>
+                    <button class="secondary-btn"><a
+                            href="https://docs.google.com/document/d/1Y905vxYFqo_3KRuzR6Ii2h-cf9gnPyiRmLA7EyvNS0U/edit?usp=sharing"
+                            rel="noopener noreferrer">read
+                            full ↗</a></button>
+                </div>
+
+                <div class="publication-item">
+                    <div class="publication-header">
+                        <h3>2. How to Build and Deploy Ingress Microservices in Kubernetes <h3>
+                                <span>DEV .to</span>
+                    </div>
+                    <div class="publication-desc">Microservices is a common approach used to design scalable
+                        software
+                        systems. Ways to build and deploy microservices in Kubernetes with Ingress for HTTP routing
+                        using a
+                        docker image from the docker hub repository and building yml files for both services.</div>
+                    <button class="secondary-btn"><a
+                            href="https://dev.to/adyaprasad/how-to-build-and-deploy-microservices-in-kubernetes-with-ingress-2007">see
+                            on dev.to ↗</a></button>
+                </div>
+
+            </div>
 
         <div id="projects">
             <h2>PROJECTS</h2>
@@ -437,77 +498,7 @@
                     </div>
                 </div>
             </div>
-            <div id="open-source">
-                <h2>OPEN SOURCE CONTRIBUTIONS</h2>
-                    <div class="contribution-item">
-                        <div class="contributon-logo"><img src="assets/huggingface-logo.png" alt="huggingface-logo"></div>                    
-                    <div class="contribution-box">
-                        <div class="contribution-title">Hugging Face: Peft</div>
-                        <div class="contribution-desc">
-                            <b>1. Resolve issue #2944: ensure_weight_tying respects config + improved tests</b> <i>{PR #3171}</i><br>
-                            updated src/peft/utils/other.py in the set_additional_trainable_modules() and
-                            _get_module_names_tied_with_embedding() functions to respect the model config and also
-                            create test file
-                        </div>
-                        <div class="hor-line"></div>
-                        <div class="contribution-desc">
-                            <b>2.Experiment: LLaMA-Adapter benchmarking evaluation metrics suits</b> <i>{ISSUE #}</i><br><br>
-                            Conduct a experiement, benchmarking the LLaMA-Adapter for Conversation AI and Math reasoning. I configured (optimized) the adapter for the Llama-3.2-3B model, ran standardized training pipelines on the MetaMathQA dataset, and evaluated its memory efficiency and reasoning retention against baseline methods to provide data points to community.
-                        </div>
-                        </div>  
-                    </div>
-                    <div class="contribution-item">
-                        <div class="contributon-logo"><img src="assets/unsloth-logo.png" alt="unsloth-logo"></div>                    
-                    <div class="contribution-box">
-                        <div class="contribution-title">Unsloth</div>
-                        <div class="contribution-desc">
-                            <b>https://github.com/unslothai/unsloth/issues/224 {➚}</b><br>
-                            solved the issue of breaking of exporting model to Colab. 
-                        </div>
-                    </div>  
-                    </div>                          
-                
-            </div>
-                <div id="publications">
-                    <h2>ARTICLES AND PUBLICATIONS</h2>
-                    <div class="publication-item">
-                        <div class="publication-header">
-                            <h3>1. AushadiNet-GATv2: Graph Attention Network for Predicting Drug-Drug Interactions in
-                                Polypharmacy</h3>
-                            <span>India AI</span>
-                        </div>
-                        <div class="publication-desc">I researched and presented AushadhiNet-GATv2, a graph neural
-                            network
-                            architecture for predicting drug-drug interactions in polypharmacy. System addresses
-                            critical
-                            limitations of existing DDI prediction methods through multi-view molecular representation
-                            learning,
-                            hierarchical GATv2 message passing with residual connections, dual-head classification for
-                            interaction detection and mechanism prediction, and integration with patient-specific
-                            cardiovascular
-                            risk profiling</div>
-                        <button class="secondary-btn"><a
-                                href="https://docs.google.com/document/d/1Y905vxYFqo_3KRuzR6Ii2h-cf9gnPyiRmLA7EyvNS0U/edit?usp=sharing"
-                                rel="noopener noreferrer">read
-                                full ↗</a></button>
-                    </div>
 
-                    <div class="publication-item">
-                        <div class="publication-header">
-                            <h3>2. How to Build and Deploy Ingress Microservices in Kubernetes <h3>
-                                    <span>DEV .to</span>
-                        </div>
-                        <div class="publication-desc">Microservices is a common approach used to design scalable
-                            software
-                            systems. Ways to build and deploy microservices in Kubernetes with Ingress for HTTP routing
-                            using a
-                            docker image from the docker hub repository and building yml files for both services.</div>
-                        <button class="secondary-btn"><a
-                                href="https://dev.to/adyaprasad/how-to-build-and-deploy-microservices-in-kubernetes-with-ingress-2007">see
-                                on dev.to ↗</a></button>
-                    </div>
-
-                </div>
 
                 <div id="skill">
                     <h2>SKILLS AND TECH STACK</h2>
@@ -558,8 +549,6 @@
                         </ol>
                     </div>
                 </div>
-
-
                 <div id="learnings">
                     <h2>LEARNINGS (EDUCATION)</h2>
                     <h3>St Thomas International School:</h3>
@@ -714,7 +703,7 @@
 
                 <hr class="hor-line">
                 <div id="footer">
-                    Adya Prasad (आद्या प्रसाद) 🤟 &copy; all right reserved 2025 🇮🇳
+                    Adya Prasad (आद्या प्रसाद) 🤟 &copy; all right reserved 2025 - 2026 🇮🇳
                 </div>
 
     </main>
