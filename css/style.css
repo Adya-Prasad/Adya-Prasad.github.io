@@ -3,6 +3,7 @@
     --primary: #5a514e;
     --primary-dark: #47362f;
     --secondary: #ad8b79;
+    --background: #fbf8f8;
 }
 
 *,
@@ -19,6 +20,7 @@ body {
     color: var(--primary);
     font-family: monospace;
     font-size: 0.9rem;
+    background-color: var(--background);
 }
 
 .menu-icon {
@@ -26,7 +28,7 @@ body {
 }
 
 main {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 2px auto;
     margin-top: 15px;
 }
@@ -65,6 +67,11 @@ h3 {
     margin-top: 1rem;
 }
 
+.about {
+    margin-top: 2rem;
+    font-size: 0.95rem;
+    text-align: justify;
+}
 
 .me {
     text-align: right;
@@ -128,43 +135,6 @@ header {
     height: 20px;
 }
 
-
-/* Components */
-.love {
-    font-family: monospace;
-    padding: 20px;
-    border-radius: 8px;
-    width: 100%;
-    margin: 20px 0;
-    text-align: center;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #c48564;
-    background: linear-gradient(150deg, rgba(48, 48, 48, 0.04) 70%, rgba(255, 254, 253, 0.35) 100%);
-    border-radius: 12px;
-    border: 1px solid rgba(214, 210, 209, 0.541);
-    display: block;
-    box-sizing: border-box;
-}
-
-.love span {
-    border-right: 2px solid var(--primary);
-    animation: cursor-blink 0.75s infinite;
-}
-
-@keyframes cursor-blink {
-    0% {
-        border-right-color: transparent
-    }
-
-    50% {
-        border-right-color: var(--primary);
-    }
-
-    100% {
-        border-right-color: transparent
-    }
-}
 
 .secondary-btn {
     background-color: var(--secondary);
