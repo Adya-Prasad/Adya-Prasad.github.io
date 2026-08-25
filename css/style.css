@@ -97,6 +97,10 @@ header {
     display: flex;
     margin: 0;
     font-size: 1rem;
+    background: linear-gradient(175deg, rgba(203, 201, 200, 0.5) 60%, rgba(231, 209, 198, 0.61) 100%);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(192, 189, 188, 0.32);
+    border-radius: 7px;
 }
 
 .menu-list {
@@ -348,9 +352,10 @@ header {
 /* Publication Section */
 .publication-item {
     margin-bottom: 12px;
-    border: 1px solid #fff0eb;
+    border: 1px solid #eee5e2;
     border-radius: 6px;
     padding: 0.5rem;
+    background-color: rgb(253, 250, 247);
 }
 
 .publication-header {
@@ -369,6 +374,7 @@ header {
     border-radius: 3px;
     font-size: 0.7rem;
     text-align: center;
+    height: fit-content;
 }
 
 .eca-item {
@@ -499,6 +505,10 @@ header {
 
 .contact-icon svg:hover {
     border: 1px solid var(--secondary);
+}
+
+a{
+    color: #69574f;
 }
 
 /* Footer */
