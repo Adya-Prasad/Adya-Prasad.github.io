@@ -79,6 +79,43 @@
         display: flex;
     }
 
+    /* Close button inside sidebar */
+    .sidebar-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 2rem;
+        line-height: 1;
+        cursor: pointer;
+        padding: 0 6px;
+        border-radius: 4px;
+        transition: background 0.2s ease;
+        z-index: 1001;
+    }
+
+    .sidebar-close:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Overlay behind sidebar for outside-click dismiss */
+    .sidebar-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 999;
+    }
+
+    .navigation.active ~ .sidebar-overlay {
+        display: block;
+    }
+
     /* Style menu items */
     .menu-list {
         flex-direction: column;

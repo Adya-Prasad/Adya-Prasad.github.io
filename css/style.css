@@ -294,7 +294,7 @@ header {
 }
 
 .project-box {
-    flex: 0 1 calc(33.333% - 1rem);
+    flex: 0 1 calc(50% - 1rem);
     display: flex;
     flex-direction: column;
     /* Stack children vertically */
@@ -347,6 +347,92 @@ header {
     gap: 0.5rem;
     margin-top: auto;
     justify-content: flex-start;
+}
+
+/* Hidden project cards (beyond first 2) */
+.project-hidden {
+    display: none !important;
+}
+
+.project-hidden.project-visible {
+    display: flex !important;
+}
+
+/* See More / See Less toggle button */
+.see-more-btn {
+    display: block;
+    position: relative;
+    margin: 0.8rem auto 0;
+    padding: 0.5rem 1.6rem;
+    background: var(--background);
+    border: none;
+    border-radius: 8px;
+    color: var(--secondary);
+    font-family: monospace;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    letter-spacing: 0.02em;
+    z-index: 1;
+    transition: color 0.3s ease;
+}
+
+/* Revolving animated border */
+.see-more-btn::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 10px;
+    background: conic-gradient(
+        from var(--border-angle, 0deg),
+        var(--secondary) 0%,
+        transparent 30%,
+        transparent 70%,
+        var(--secondary) 100%
+    );
+    z-index: -2;
+    animation: revolve-border 3s linear infinite;
+}
+
+/* Inner mask to create the border effect */
+.see-more-btn::after {
+    content: '';
+    position: absolute;
+    top: 1.5px;
+    left: 1.5px;
+    right: 1.5px;
+    bottom: 1.5px;
+    border-radius: 7px;
+    background: var(--background);
+    z-index: -1;
+}
+
+@keyframes revolve-border {
+    0%   { --border-angle: 0deg; }
+    100% { --border-angle: 360deg; }
+}
+
+@property --border-angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.see-more-btn:hover {
+    color: var(--primary-dark);
+}
+
+.see-more-btn:hover::before {
+    animation-duration: 1.5s;
+}
+
+/* Hide sidebar UI on desktop */
+.sidebar-close,
+.sidebar-overlay {
+    display: none;
 }
 
 /* Publication Section */
@@ -507,7 +593,7 @@ header {
     border: 1px solid var(--secondary);
 }
 
-a{
+a {
     color: #69574f;
 }
 

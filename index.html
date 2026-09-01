@@ -66,9 +66,10 @@
                     </svg>menu
                 </div>
                 <nav class="navigation">
+                    <button class="sidebar-close" onclick="closeMenu()" aria-label="Close menu">&times;</button>
                     <ul class="menu-list">
                         <li>
-                            <a href="#experience">
+                            <a href="#experience" onclick="closeMenu()">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -2.6 24 24" fill="none"
                                     stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                     stroke-linejoin="round">
@@ -85,7 +86,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#projects">
+                            <a href="#projects" onclick="closeMenu()">
 
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                     <path fill-rule="evenodd"
@@ -96,7 +97,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#publications">
+                            <a href="#publications" onclick="closeMenu()">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                     <path fill-rule="evenodd"
                                         d="M7.502 6h7.128A3.375 3.375 0 0118 9.375v9.375a3 3 0 003-3V6.108c0-1.505-1.125-2.811-2.664-2.94a48.972 48.972 0 00-.673-.05A3 3 0 0015 1.5h-1.5a3 3 0 00-2.663 1.618c-.225.015-.45.032-.673.05C8.662 3.295 7.554 4.542 7.502 6zM13.5 3A1.5 1.5 0 0012 4.5h4.5A1.5 1.5 0 0015 3h-1.5z"
@@ -109,7 +110,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="#learnings">
+                            <a href="#learnings" onclick="closeMenu()">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
                                     <path
                                         d="M11.7 2.805a.75.75 0 01.6 0A60.65 60.65 0 0122.83 8.72a.75.75 0 01-.231 1.337 49.949 49.949 0 00-9.902 3.912l-.003.002-.34.18a.75.75 0 01-.707 0A50.009 50.009 0 007.5 12.174v-.224c0-.131.067-.248.172-.311a54.614 54.614 0 014.653-2.52.75.75 0 00-.65-1.352 56.129 56.129 0 00-4.78 2.589 1.858 1.858 0 00-.859 1.228 49.803 49.803 0 00-4.634-1.527.75.75 0 01-.231-1.337A60.653 60.653 0 0111.7 2.805z" />
@@ -123,6 +124,7 @@
                         </li>
                     </ul>
                 </nav>
+                <div class="sidebar-overlay" onclick="closeMenu()"></div>
             </div>
         </header>
         </div>
@@ -263,17 +265,6 @@
                     </div>
                 </div>
             </div>
-            <div class="contribution-item">
-                <div class="contributon-logo"><img src="assets/unsloth-logo.png" alt="unsloth-logo"></div>
-                <div class="contribution-box">
-                    <div class="contribution-title">Unsloth</div>
-                    <div class="contribution-desc">
-                        <b>https://github.com/unslothai/unsloth/issues/224 {➚}</b><br>
-                        solved the issue of breaking of exporting model to Colab.
-                    </div>
-                </div>
-            </div>
-
         </div>
         <div id="publications">
             <h2>ARTICLES</h2>
@@ -301,8 +292,8 @@
         </div>
 
         <div id="projects">
-            <h2>PROJECTS</h2>
-            <div class="project-wrapper">
+            <h2>PRODUCTION PROJECTS</h2>
+            <div class="project-wrapper" id="production-projects">
                 <div class="project-box">
                     <h3 class="project-title">Cupid: Agentic Social Media Content Generation Platform</h3>
                     <img src="assets/Cupid-agent-thumbnail.png" alt="Cupid-agent-thumbnail" class="project-img">
@@ -351,7 +342,7 @@
                                 href="https://creatorsai-lab.github.io/luffy-create/">Download</a></button>
                     </div>
                 </div>
-                <div class="project-box">
+                <div class="project-box project-hidden">
                     <h3 class="project-title">AushadhiNet-GATv2 DDI Model</h3>
                     <img src="assets/AushadiNet-GATv2-Model.png" alt="AushadhiNet-GATv2-DDI-Model-Architecture-Image"
                         class="project-img">
@@ -374,256 +365,271 @@
                                 Demonstration</a></button>
                     </div>
                 </div>
+            </div>
+            <button class="see-more-btn" onclick="toggleProjects('production-projects', this)">See More ↓</button>
+        </div>
+        <div>
+            <h2>RESEARCH PROJECTS</h2>
+            <div class="project-wrapper" id="research-projects">
                 <div class="project-box">
-                    <h3 class="project-title">GLC-Platform</h3>
-                    <img src="assets/GLC-platform-dashboard-screenshot.png" alt="GLC-platform-dashboard-screenshot"
-                        class="project-img">
-                    <div class="project-desc">Green Loan Cycle platform streamlines ESG-linked loan assessments
-                        automatically, identifying and measuring key metrics, making data capture on performance 30%
-                        easier with LMA framework and AI agents. <b>Features:</b> loan data resolution, loan assessment,
-                        sustainability checks, key stakeholder evaluation, loan balance sheet generation, and
-                        AI-assisted advice. </div>
+                    <h3 class="project-title">Cupid: Agentic Social Media Content Generation Platform</h3>
+                    <img src="assets/Cupid-agent-thumbnail.png" alt="Cupid-agent-thumbnail" class="project-img">
+                    <div class="project-desc">A multi-agent system to generate platform-specific social content from
+                        natural-language prompts. <b>Four LangGraph agents</b> coordinate the pipeline: supervisor
+                        agent, personalization agent, research agent, and composer agent. The personalization agent
+                        decomposes user intent into five orthogonal search queries, the research agent runs parallel web
+                        retrieval through DuckDuckGo with trafilatura-based content extraction, the composer agent
+                        distills sources into atomic facts and generates three angle-diverse variants in parallel, and
+                        the trends service handles scheduled background ingestion from Google News RSS ranking articles
+                        per-user with BM25 and recency decay, hybrid memory layer and LLM chain for fallback: Groq,
+                        HuggingFace and local heuristics.
+                    </div>
                     <div class="project-skills">
-                        <span>#Hackathon Project</span><span>NLP</span><span>Financial
-                            Analysis</span><span>RAG</span>
+                        <span>multi-agent orchestration</span><span>MCP</span><span>RAG</span><span>Langchain</span>
                     </div>
                     <div class="project-btn-group">
-                        <button class="secondary-btn"><a href="https://github.com/Adya-Prasad/GLC-Platform"
-                                rel="noopener noreferrer" target="_blank">View source</a></button>
-                        <button class="secondary-btn"><a href="https://youtu.be/0UhV5AI7tcc?si=3avdUal9QUH0c9_V"
+                        <button class="secondary-btn"><a href="https://github.com/Creatorsai-Lab/cupid"
+                                rel="noopener noreferrer" target="_blank">GitHub
+                                source code</a></button>
+                        <button class="secondary-btn"><a title="no deployed yet! under development">See
+                                Live</a></button>
+                    </div>
+                </div>
+                <div class="project-box">
+                    <h3 class="project-title">Luffy Create: AI Video Creation App</h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/nHnfZ-duLA8?si=lL1CcMZPXgD0cPqf"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="project-img"></iframe>
+                    <div class="project-desc">A lightweight, open-source desktop app for making animated videos for
+                        technical and educational content.
+                        Code walkthroughs, system-design diagrams, and slide-based animations — with frame control,
+                        Agentic AI help, automatic subtitles feature and mutliple format export. Fully offline, no
+                        account required.
+                        <br>Built on Electron, ffmpeg and ai api.
+                    </div>
+
+                    <div class="project-skills">
+                        <span>desktop app</span><span>multimedia processing</span><span>stream management</span>
+                    </div>
+                    <div class="project-btn-group">
+                        <button class="secondary-btn"><a href="https://github.com/Creatorsai-Lab/luffy-create">view
+                                source code</a></button>
+                        <button class="secondary-btn"><a
+                                href="https://creatorsai-lab.github.io/luffy-create/">Download</a></button>
+                    </div>
+                </div>
+                <div class="project-box project-hidden">
+                    <h3 class="project-title">AushadhiNet-GATv2 DDI Model</h3>
+                    <img src="assets/AushadiNet-GATv2-Model.png" alt="AushadhiNet-GATv2-DDI-Model-Architecture-Image"
+                        class="project-img">
+                    <div class="project-desc">AushadhiNet-GATv2 is a graph neural network model that predicts drug-pair
+                        interactions with probability scores and classifies interaction types (potential adverse drug
+                        reactions) across 86 mechanisms. The system alerts physicians and patients before prescribing or
+                        taking medications, preventing harmful drug combinations.</div>
+                    <div class="project-skills">
+                        <span>#Research
+                            Project</span><span>GNN</span><span>Drug
+                            Molecules</span><span>Drug Interaction Prediction</span>
+                    </div>
+                    <div class="project-btn-group">
+                        <button class="secondary-btn"><a
+                                href="https://docs.google.com/document/d/1Y905vxYFqo_3KRuzR6Ii2h-cf9gnPyiRmLA7EyvNS0U/edit?usp=sharing"
+                                rel="noopener noreferrer" target="_blank">Read
+                                Paper</a></button>
+                        <button class="secondary-btn"><a href="https://youtu.be/4ofUqD3GhTQ?si=PR021vp8ErbcMM6F"
                                 rel="noopener noreferrer" target="_blank">Watch
                                 Demonstration</a></button>
                     </div>
                 </div>
+            </div>
+            <button class="see-more-btn" onclick="toggleProjects('research-projects', this)">See More ↓</button>
+        </div>
 
-                <div class="project-box">
-                    <h3 class="project-title">Self-learning, self driving car simulation with vanilla Javascript</h3>
-                    <img src="assets/Screenshot-Self-driving car simulation.png"
-                        alt="Screenshot-Self-driving car simulation" class="project-img">
-                    <div class="project-desc">Inspired by Dr. Radu Mariescu-Istodor, A pure JavaScript neural network
-                        system that learns to drive cars autonomously and avoid obstacles. <b>AI Functions:
-                        </b><i>Genetic Algorithm with mutation-based evolution, Population-based learning, Real-time
-                            neural network Visualisation, Fitness-driven selection for optimal performance</i></div>
-                    <div class="project-skills">
-                        <span>Autonomous System</span><span>Self driving car</span><span>Vanilla JS</span>
-                    </div>
-                    <div class="project-btn-group">
-                        <button class="secondary-btn"><a
-                                href="https://github.com/Adya-Prasad/Self-Driving-Car-Simulation"
-                                rel="noopener noreferrer" target="_blank">view
-                                codebase</a></button>
-                        <button class="secondary-btn"><a href="#projects" title="link will update very soon!"
-                                rel="noopener noreferrer" target="_blank">see live
-                                project</a></button>
-                    </div>
-
-                </div>
-                <div class="project-box">
-                    <h3 class="project-title">Mobi Flow: Type in your PC through phone from anywhere</h3>
-                    <img src="assets/BlueFlow-Thumbnail.png" alt="Personal Prompts Manager Picture" class="project-img">
-                    <div class="project-desc">Transform any article, text file, study resources, URL or direct text into
-                        interactive study materials: <b>Summary, Flashcards, and Quizzes </b> with live results and
-                        marks.
-                        Making learning interactive, evaluative and handy. </div>
-                    <div class="project-skills">
-                        <span>Hackathon Project</span><span>AI Web Application</span><span>Gemini Nano
-                            API</span><span>Fetch
-                            API</span>
-                    </div>
-                    <div class="project-btn-group">
-                        <button class="secondary-btn"><a href="https://github.com/Adya-Prasad/BlueFlow">Download
-                                It!</a></button>
-
-                    </div>
-                </div>
-
+        <div id="skill">
+            <h2>SKILLS AND TECH STACK</h2>
+            <div class="skillset">
+                <span><b>LANGUAGES:</b></span><span>Python</span><span>TypeScript</span><span>R
+                    lang</span><span>JavaScript</span><span>SQL</span>
+            </div>
+            <div class="skillset">
+                <span><b>FRAMEWORKS:</b></span><span>Flask</span><span>Django</span><span>FastAPI</span><span>React
+                    js</span><span>Next js</span>
+            </div>
+            <div class="skillset"><span><b>TOOLS:</b></span><span>Apache Ecosystem (learning: Kafka, Spark, and
+                    Hadoop)</span><span>Hugging Face
+                    Ecosystem</span><span>Ollama</span><span>MongoDB</span><span>Postman</span><span>Prometheus</span><span>n8n</span><span><i>Canva</i></span>
+            </div>
+            <div class="skillset"><span><b>DB:</b></span><span>PostgreSQL</span><span>SQLite</span><span>MongoDB
+                </span><span>Redis</span><span>ChromaDB</span></div>
+            <div class="skillset"><span><b>LIBRARY /
+                        MODULES:</b></span><span>PyTorch</span><span>TensorFlow</span><span>NLTK
+                    (NLP)</span><span>Numpy</span><span>Pandas</span><span>Matplotlib</span><span>PEFT</span><span>Transformers</span><span>Openai</span><span>Langchain</span><span>LlamaIndex</span><span>SQLAlchemy</span><span>ChromaDB</span>
+            </div>
+            <div class="skillset">
+                <span><b>PLATFORMS:</b></span><span>Docker</span><span>Kubernetes</span><span>AWS
+                </span><span>Ubuntu OS</span><span>Kali OS</span>
             </div>
 
-            <div id="skill">
-                <h2>SKILLS AND TECH STACK</h2>
-                <div class="skillset">
-                    <span><b>LANGUAGES:</b></span><span>Python</span><span>TypeScript</span><span>R
-                        lang</span><span>JavaScript</span><span>SQL</span>
-                </div>
-                <div class="skillset">
-                    <span><b>FRAMEWORKS:</b></span><span>Flask</span><span>Django</span><span>FastAPI</span><span>React
-                        js</span><span>Next js</span>
-                </div>
-                <div class="skillset"><span><b>TOOLS:</b></span><span>Apache Ecosystem (learning: Kafka, Spark, and
-                        Hadoop)</span><span>Hugging Face
-                        Ecosystem</span><span>Ollama</span><span>MongoDB</span><span>Postman</span><span>Prometheus</span><span>n8n</span><span><i>Canva</i></span>
-                </div>
-                <div class="skillset"><span><b>DB:</b></span><span>PostgreSQL</span><span>SQLite</span><span>MongoDB
-                    </span><span>Redis</span><span>ChromaDB</span></div>
-                <div class="skillset"><span><b>LIBRARY /
-                            MODULES:</b></span><span>PyTorch</span><span>TensorFlow</span><span>NLTK
-                        (NLP)</span><span>Numpy</span><span>Pandas</span><span>Matplotlib</span><span>PEFT</span><span>Transformers</span><span>Openai</span><span>Langchain</span><span>LlamaIndex</span><span>SQLAlchemy</span><span>ChromaDB</span>
-                </div>
-                <div class="skillset">
-                    <span><b>PLATFORMS:</b></span><span>Docker</span><span>Kubernetes</span><span>AWS
-                    </span><span>Ubuntu OS</span><span>Kali OS</span>
-                </div>
-
-                <div id="ECA">
-                    <h2>EXTRACURRICULAR ACTIVITIES & ACHIEVEMENTS</h2>
-                    <ol>
-                        <li class="eca-item">
-                            <h3>Deloitte Australia Technology Job Simulation on Forage</h3>
-                            <ul>
-                                <li>Develop a program to normalise different telemetry JSON data of IOT machine
-                                    (Simple ETL
-                                    pipelines)</li>
-                                <li>Craft a complete "software development proposal" for a real-time monitoring live
-                                    dashboard
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="eca-item">
-                            <h3>Founder (Developer and Author) of a STEM educational website: indiecore.in</h3>
-                            <ul>
-                                <li>Run and manage a STEM educational website, specially focused on high school and
-                                    intermediate students to provide free of cost study material for their exam
-                                    preparation, computer skills, and reasoning skills development
-                                </li>
-                                <li>Create 500+ resources and materials: blogs, webstories, quizzes, mock tests, pdfs
-                                    and flashcards. Achieved 1 million plus impressions and than 200k traffic </li>
-                            </ul>
-                        </li>
-                        <li class="eca-item"><b>Teaching assistance</b> for freshers, in fundamentals of computer
-                            application subject. Office hours work on managing course materials and leading discussion
-                            group.</li>
-                        <li class="eca-item">Hackathon Winner: Bye to Beat on Devpost | <b>Project:
-                                AushadhiNet-GATv2 DDI Model | Predicting Drug-Drug
-                                Interactions</b>
-                        </li>
-                        <li class="eca-item"><b>200+ Submission</b> Competitive Programming: HackerRank, LeetCode,
-                            CodeForces, and TensorTonic</b>
-                        </li>
-                    </ol>
-                </div>
-            </div>
-            <div id="learnings">
-                <h2>LEARNINGS (EDUCATION)</h2>
-                <h3>St Thomas International School:</h3>
-                High School (9 and 10) <br>Intermediate (11 and 12).
-                <h3>VBSP University:</h3>
-                B.Tech(Computer Science & Engineering)
-                <h3>Harvard CS50x:</h3>
-                Computer Science, Cybersecurity, Artifical Intelligence and R*.
-                <h3>Master Diploma in Computer Application </h3>
-                from Amrtikosh Info-tech institute (duration: 2 years).
-                Fundamentals of Computer programming, C, JavaScript, TypeScript, Bash Scripting, Web Development, Office
-                Automation.
-                <br><br>
-                <h3>Certifications:</h3>
+            <div id="ECA">
+                <h2>EXTRACURRICULAR ACTIVITIES & ACHIEVEMENTS</h2>
                 <ol>
-                    <li>YouTube full course playlist I take: <b>Standford C229 Machine Learning (Autumn 2018),
-                            Stanford CS230 Deep Learning (Autumn 2025), Standford CS224R Deep Reinforcement
-                            Learning (Spring 2025)</b></li>
-                    <li>Amazon SageMaker AI Getting Started <i>by AWS Training </i> - [Oct 2025]</li>
-                    <li>Build Your Own Chatbot<i>by IBM SkillsBuild</i>- [Jan 2025]</li>
-                    <li>Market research <i>by Great Learning</i> - [May 2024]</li>
-                    <li>Google Technical Writing Course One and Two <i>by Google Developers</i> - [June 2022]</li>
-                    <li>Content Creation, Optimization, SEO and Strategies <i>by HubSpot Academy</i></li>
+                    <li class="eca-item">
+                        <h3>Deloitte Australia Technology Job Simulation on Forage</h3>
+                        <ul>
+                            <li>Develop a program to normalise different telemetry JSON data of IOT machine
+                                (Simple ETL
+                                pipelines)</li>
+                            <li>Craft a complete "software development proposal" for a real-time monitoring live
+                                dashboard
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="eca-item">
+                        <h3>Founder (Developer and Author) of a STEM educational website: indiecore.in</h3>
+                        <ul>
+                            <li>Run and manage a STEM educational website, specially focused on high school and
+                                intermediate students to provide free of cost study material for their exam
+                                preparation, computer skills, and reasoning skills development
+                            </li>
+                            <li>Create 500+ resources and materials: blogs, webstories, quizzes, mock tests, pdfs
+                                and flashcards. Achieved 1 million plus impressions and than 200k traffic </li>
+                        </ul>
+                    </li>
+                    <li class="eca-item"><b>Teaching assistance</b> for freshers, in fundamentals of computer
+                        application subject. Office hours work on managing course materials and leading discussion
+                        group.</li>
+                    <li class="eca-item">Hackathon Winner: Bye to Beat on Devpost | <b>Project:
+                            AushadhiNet-GATv2 DDI Model | Predicting Drug-Drug
+                            Interactions</b>
+                    </li>
+                    <li class="eca-item"><b>200+ Submission</b> Competitive Programming: HackerRank, LeetCode,
+                        CodeForces, and TensorTonic</b>
+                    </li>
                 </ol>
             </div>
-            <div id="blogs">
-                <h2>BLOGS</h2>
-                <ol>
-                    <li><a href="blogs/self-taught-machine-learning-resources.html">Self-Taught Machine Learning
-                            Resources and Plan</a></li>
-                </ol>
+        </div>
+        <div id="learnings">
+            <h2>LEARNINGS (EDUCATION)</h2>
+            <h3>St Thomas International School:</h3>
+            High School (9 and 10) <br>Intermediate (11 and 12).
+            <h3>VBSP University:</h3>
+            B.Tech(Computer Science & Engineering)
+            <h3>Harvard CS50x:</h3>
+            Computer Science, Cybersecurity, Artifical Intelligence and R*.
+            <h3>Master Diploma in Computer Application </h3>
+            from Amrtikosh Info-tech institute (duration: 2 years).
+            Fundamentals of Computer programming, C, JavaScript, TypeScript, Bash Scripting, Web Development, Office
+            Automation.
+            <br><br>
+            <h3>Certifications:</h3>
+            <ol>
+                <li>YouTube full course playlist I take: <b>Standford C229 Machine Learning (Autumn 2018),
+                        Stanford CS230 Deep Learning (Autumn 2025), Standford CS224R Deep Reinforcement
+                        Learning (Spring 2025)</b></li>
+                <li>Amazon SageMaker AI Getting Started <i>by AWS Training </i> - [Oct 2025]</li>
+                <li>Build Your Own Chatbot<i>by IBM SkillsBuild</i>- [Jan 2025]</li>
+                <li>Market research <i>by Great Learning</i> - [May 2024]</li>
+                <li>Google Technical Writing Course One and Two <i>by Google Developers</i> - [June 2022]</li>
+                <li>Content Creation, Optimization, SEO and Strategies <i>by HubSpot Academy</i></li>
+            </ol>
+        </div>
+        <div id="blogs">
+            <h2>BLOGS</h2>
+            <ol>
+                <li><a href="blogs/self-taught-machine-learning-resources.html">Self-Taught Machine Learning
+                        Resources and Plan</a></li>
+            </ol>
+        </div>
+
+
+        <div id="contact">
+
+            <h3>CONTACT ME</h3>
+            <i>Hey you, I am very much interested in speaking with you, Feel free to contact me</i>
+            <div class="contact-icon">
+                <a href="https://www.linkedin.com/in/adyaprasad/" target="_blank" rel="noopener noreferrer"
+                    title="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="https://x.com/adyaprasad_" target="_blank" rel="noopener noreferrer" title="X (Twitter)">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+                        </path>
+                    </svg>
+                </a>
+
+                <a href="https://github.com/Adya-Prasad/" target="_blank" rel="noopener noreferrer" title="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.137 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="mailto:adyaprasad.info@gmail.com" rel="noopener noreferrer" title="Email">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z">
+                        </path>
+                        <path
+                            d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z">
+                        </path>
+                    </svg>
+                </a>
+
+                <!-- YouTube -->
+                <a href="https://www.youtube.com/c/adyaprasad_" target="_blank" rel="noopener noreferrer"
+                    title="YouTube">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+                    </svg>
+                </a>
+
+
+                <!-- Instagram -->
+                <a href="https://instagram.com/adyaprasad_" target="_blank" rel="noopener noreferrer" title="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                    </svg>
+                </a>
+
+                <!-- Google Scholar -->
+                <a href="https://scholar.google.com/citations?user=A5-HZn8AAAAJ&hl=en" target="_blank"
+                    rel="noopener noreferrer" title="Google Scholar">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
+                    </svg>
+                </a>
+
+                <a href="https://g.dev/adyaprasad" target="_blank" rel="noopener noreferrer"
+                    title="Google Developer Profile">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M9 6L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" fill="none"></path>
+                        <path d="M4 12L9 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" fill="none"></path>
+                        <path d="M15 6L20 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" fill="none"></path>
+                        <path d="M20 12L15 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+                            stroke-linejoin="round" fill="none"></path>
+                    </svg>
+                </a>
+
             </div>
+        </div>
 
-
-            <div id="contact">
-
-                <h3>CONTACT ME</h3>
-                <i>Hey you, I am very much interested in speaking with you, Feel free to contact me</i>
-                <div class="contact-icon">
-                    <a href="https://www.linkedin.com/in/adyaprasad/" target="_blank" rel="noopener noreferrer"
-                        title="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z">
-                            </path>
-                        </svg>
-                    </a>
-                    <a href="https://x.com/adyaprasad_" target="_blank" rel="noopener noreferrer" title="X (Twitter)">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
-                            </path>
-                        </svg>
-                    </a>
-
-                    <a href="https://github.com/Adya-Prasad/" target="_blank" rel="noopener noreferrer" title="GitHub">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.137 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z">
-                            </path>
-                        </svg>
-                    </a>
-                    <a href="mailto:adyaprasad.info@gmail.com" rel="noopener noreferrer" title="Email">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M1.5 8.67v8.58a3 3 0 003 3h15a3 3 0 003-3V8.67l-8.928 5.493a3 3 0 01-3.144 0L1.5 8.67z">
-                            </path>
-                            <path
-                                d="M22.5 6.908V6.75a3 3 0 00-3-3h-15a3 3 0 00-3 3v.158l9.714 5.978a1.5 1.5 0 001.572 0L22.5 6.908z">
-                            </path>
-                        </svg>
-                    </a>
-
-                    <!-- YouTube -->
-                    <a href="https://www.youtube.com/c/adyaprasad_" target="_blank" rel="noopener noreferrer"
-                        title="YouTube">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
-                        </svg>
-                    </a>
-
-
-                    <!-- Instagram -->
-                    <a href="https://instagram.com/adyaprasad_" target="_blank" rel="noopener noreferrer"
-                        title="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                        </svg>
-                    </a>
-
-                    <!-- Google Scholar -->
-                    <a href="https://scholar.google.com/citations?user=A5-HZn8AAAAJ&hl=en" target="_blank"
-                        rel="noopener noreferrer" title="Google Scholar">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z" />
-                        </svg>
-                    </a>
-
-                    <a href="https://g.dev/adyaprasad" target="_blank" rel="noopener noreferrer"
-                        title="Google Developer Profile">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                            <path d="M9 6L4 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                stroke-linejoin="round" fill="none"></path>
-                            <path d="M4 12L9 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                stroke-linejoin="round" fill="none"></path>
-                            <path d="M15 6L20 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                stroke-linejoin="round" fill="none"></path>
-                            <path d="M20 12L15 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
-                                stroke-linejoin="round" fill="none"></path>
-                        </svg>
-                    </a>
-
-                </div>
-            </div>
-
-            <hr class="hor-line">
-            <div id="footer">
-                Adya Prasad (आद्या प्रसाद) 🤟 &copy; all right reserved 2025 - 2026 🇮🇳
-            </div>
+        <hr class="hor-line">
+        <div id="footer">
+            Adya Prasad (आद्या प्रसाद) 🤟 &copy; all right reserved 2025 - 2026 🇮🇳
+        </div>
 
     </main>
 
