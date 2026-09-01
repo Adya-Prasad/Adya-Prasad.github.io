@@ -156,6 +156,30 @@
 
                 <div class="experience-item">
                     <div class="experience-title">
+                        <h3>Research Fellow | <i>Sentient Future Org</i></h3>
+                        <div class="experience-duration">Septemeber 2026 - Present</div>
+                    </div>
+                    <div class="experience-desc">
+                        <ul>
+                            <li>Problem Statement: <b>LLM-driven causal modeling of AI loss-of-control risk.</b>Mentor:
+                                <b>Swaptik Chowdhury</b>
+                            </li>
+                            <li>Using a custom built library of <b>AI loss-of-control scenarios</b>. And converting it
+                                into causal
+                                loop diagrams by extracting decision-relevant variables and the
+                                relationships between them, using an LLM pipeline grounded in established
+                                literature-extraction methods </li>
+                            <li><b>Role: </b> Building the technical pipeline end to end. This includes implementing
+                                the
+                                literature-extraction methods to pull decision-relevant variables and relationships
+                                from the scenario library, building the LLM pipeline that converts these into causal
+                                loop diagrams, and testing the SaferAI quantitative risk estimation methods on top
+                                of the resulting diagrams</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="experience-item">
+                    <div class="experience-title">
                         <h3>Applied AI Research Intern | <i>BaseThesis Lab</i></h3>
                         <div class="experience-duration">May 2026 - Present</div>
                     </div>
@@ -170,7 +194,7 @@
                                 history, and safety to improve statistical
                                 robustness and probe generalization. Scored AUROC 0.65, demonstrating residual-stream
                                 trajectories provide useful signals for
-                                detecting unfaithful reasoning <i>on-going</i></li>
+                                detecting unfaithful reasoning</li>
                         </ul>
                     </div>
                 </div>
@@ -286,7 +310,7 @@
                     risk profiling</div>
                 <button class="secondary-btn"><a
                         href="https://github.com/Adya-Prasad/AushadhiNet/blob/main/AushadiNet_Research_Paper.pdf"
-                        rel="noopener noreferrer">read
+                        rel="noopener noreferrer" target="_blank">read
                         full ↗</a></button>
             </div>
         </div>
@@ -296,7 +320,7 @@
             <div class="project-wrapper" id="production-projects">
                 <div class="project-box">
                     <h3 class="project-title">Cupid: Agentic Social Media Content Generation Platform</h3>
-                    <img src="assets/Cupid-agent-thumbnail.png" alt="Cupid-agent-thumbnail" class="project-img">
+                    <img src="assets/cupid_homepage_screenshot.png" alt="Cupid-agent-thumbnail" class="project-img">
                     <div class="project-desc">A multi-agent system to generate platform-specific social content from
                         natural-language prompts. <b>Four LangGraph agents</b> coordinate the pipeline: supervisor
                         agent, personalization agent, research agent, and composer agent. The personalization agent
@@ -324,6 +348,7 @@
                         title="YouTube video player" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="project-img"></iframe>
+                    <img src="assets/Luffy-create-screenshot.webp" alt="Luffy-create-editor" class="project-img">
                     <div class="project-desc">A lightweight, open-source desktop app for making animated videos for
                         technical and educational content.
                         Code walkthroughs, system-design diagrams, and slide-based animations — with frame control,
@@ -343,26 +368,28 @@
                     </div>
                 </div>
                 <div class="project-box project-hidden">
-                    <h3 class="project-title">AushadhiNet-GATv2 DDI Model</h3>
-                    <img src="assets/AushadiNet-GATv2-Model.png" alt="AushadhiNet-GATv2-DDI-Model-Architecture-Image"
-                        class="project-img">
-                    <div class="project-desc">AushadhiNet-GATv2 is a graph neural network model that predicts drug-pair
-                        interactions with probability scores and classifies interaction types (potential adverse drug
-                        reactions) across 86 mechanisms. The system alerts physicians and patients before prescribing or
-                        taking medications, preventing harmful drug combinations.</div>
+                    <h3 class="project-title">Provenance: Production ML Agent to tests upstream data changes in pipeline
+                    </h3>
+                    <img src="assets/provenance_mainpage_screenshot.png" class="project-img">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/yERyi7bP0jw?si=MAmwhXDO1n3UtpPT"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <div class="project-desc">A producer or monitoring agent emits a structured, allowlisted change
+                        signal. Provenance reads the source asset and complete downstream lineage from DataHub.
+                        It selects only the affected model and constructs a bounded experiment.
+                        <br>
+                        The runner mutates an isolated evaluation copy and compares model behavior.
+                        Numeric policy—not an LLM—returns PASS, WARNING, or BLOCK.
+                        Provenance saves JSON and Markdown evidence and publishes the result to DataHub.
+                    </div>
                     <div class="project-skills">
                         <span>#Research
-                            Project</span><span>GNN</span><span>Drug
-                            Molecules</span><span>Drug Interaction Prediction</span>
+                            Project</span><span>MLOps</span><span>ML Testing</span><span>Data Provenance</span>
                     </div>
                     <div class="project-btn-group">
-                        <button class="secondary-btn"><a
-                                href="https://docs.google.com/document/d/1Y905vxYFqo_3KRuzR6Ii2h-cf9gnPyiRmLA7EyvNS0U/edit?usp=sharing"
-                                rel="noopener noreferrer" target="_blank">Read
-                                Paper</a></button>
-                        <button class="secondary-btn"><a href="https://youtu.be/4ofUqD3GhTQ?si=PR021vp8ErbcMM6F"
-                                rel="noopener noreferrer" target="_blank">Watch
-                                Demonstration</a></button>
+                        <button class="secondary-btn"><a href="https://github.com/Adya-Prasad/Provenance"
+                                rel="noopener noreferrer" target="_blank">View Repo</a></button>
                     </div>
                 </div>
             </div>
@@ -372,57 +399,13 @@
             <h2>RESEARCH PROJECTS</h2>
             <div class="project-wrapper" id="research-projects">
                 <div class="project-box">
-                    <h3 class="project-title">Cupid: Agentic Social Media Content Generation Platform</h3>
-                    <img src="assets/Cupid-agent-thumbnail.png" alt="Cupid-agent-thumbnail" class="project-img">
-                    <div class="project-desc">A multi-agent system to generate platform-specific social content from
-                        natural-language prompts. <b>Four LangGraph agents</b> coordinate the pipeline: supervisor
-                        agent, personalization agent, research agent, and composer agent. The personalization agent
-                        decomposes user intent into five orthogonal search queries, the research agent runs parallel web
-                        retrieval through DuckDuckGo with trafilatura-based content extraction, the composer agent
-                        distills sources into atomic facts and generates three angle-diverse variants in parallel, and
-                        the trends service handles scheduled background ingestion from Google News RSS ranking articles
-                        per-user with BM25 and recency decay, hybrid memory layer and LLM chain for fallback: Groq,
-                        HuggingFace and local heuristics.
-                    </div>
-                    <div class="project-skills">
-                        <span>multi-agent orchestration</span><span>MCP</span><span>RAG</span><span>Langchain</span>
-                    </div>
-                    <div class="project-btn-group">
-                        <button class="secondary-btn"><a href="https://github.com/Creatorsai-Lab/cupid"
-                                rel="noopener noreferrer" target="_blank">GitHub
-                                source code</a></button>
-                        <button class="secondary-btn"><a title="no deployed yet! under development">See
-                                Live</a></button>
-                    </div>
-                </div>
-                <div class="project-box">
-                    <h3 class="project-title">Luffy Create: AI Video Creation App</h3>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/nHnfZ-duLA8?si=lL1CcMZPXgD0cPqf"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen class="project-img"></iframe>
-                    <div class="project-desc">A lightweight, open-source desktop app for making animated videos for
-                        technical and educational content.
-                        Code walkthroughs, system-design diagrams, and slide-based animations — with frame control,
-                        Agentic AI help, automatic subtitles feature and mutliple format export. Fully offline, no
-                        account required.
-                        <br>Built on Electron, ffmpeg and ai api.
-                    </div>
-
-                    <div class="project-skills">
-                        <span>desktop app</span><span>multimedia processing</span><span>stream management</span>
-                    </div>
-                    <div class="project-btn-group">
-                        <button class="secondary-btn"><a href="https://github.com/Creatorsai-Lab/luffy-create">view
-                                source code</a></button>
-                        <button class="secondary-btn"><a
-                                href="https://creatorsai-lab.github.io/luffy-create/">Download</a></button>
-                    </div>
-                </div>
-                <div class="project-box project-hidden">
                     <h3 class="project-title">AushadhiNet-GATv2 DDI Model</h3>
                     <img src="assets/AushadiNet-GATv2-Model.png" alt="AushadhiNet-GATv2-DDI-Model-Architecture-Image"
                         class="project-img">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/4ofUqD3GhTQ?si=sl1pQTh1GyauG3KL"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <div class="project-desc">AushadhiNet-GATv2 is a graph neural network model that predicts drug-pair
                         interactions with probability scores and classifies interaction types (potential adverse drug
                         reactions) across 86 mechanisms. The system alerts physicians and patients before prescribing or
@@ -434,12 +417,25 @@
                     </div>
                     <div class="project-btn-group">
                         <button class="secondary-btn"><a
-                                href="https://docs.google.com/document/d/1Y905vxYFqo_3KRuzR6Ii2h-cf9gnPyiRmLA7EyvNS0U/edit?usp=sharing"
+                                href="https://github.com/Adya-Prasad/AushadhiNet/blob/main/AushadiNet_Research_Paper.pdf"
                                 rel="noopener noreferrer" target="_blank">Read
                                 Paper</a></button>
                         <button class="secondary-btn"><a href="https://youtu.be/4ofUqD3GhTQ?si=PR021vp8ErbcMM6F"
                                 rel="noopener noreferrer" target="_blank">Watch
                                 Demonstration</a></button>
+                    </div>
+                </div>
+                <div class="project-box">
+                    <h3 class="project-title">Research CLI Agent (Hybrid RAG)</h3>
+                    <div class="project-desc">Research CLI agent
+                    </div>
+
+                    <div class="project-skills">
+                        <span>CLI Agent</span><span>RAG</span><span>Real-time Search</span>
+                    </div>
+                    <div class="project-btn-group">
+                        <button class="secondary-btn"><a href="https://github.com/Adya-Prasad/research-cli-agent">view
+                                source code</a></button>
                     </div>
                 </div>
             </div>

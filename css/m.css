@@ -168,6 +168,17 @@
         flex-direction: column;
     }
 
+    .contribution-item {
+        flex-direction: column;
+    }
+
+    .contribution-box {
+        width: 100%;
+        min-width: 0;
+        overflow-wrap: break-word;
+        box-sizing: border-box;
+    }
+
     .project-box {
         width: 98%;
         align-self: center;
