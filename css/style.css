@@ -615,9 +615,10 @@ header {
     margin: 0.7rem 0.3rem;
     background-color: #5e534f18;
     margin-top: -25px;
+    border: 1px solid #53453f0c;
+    border-radius: 5px;
     padding: 0.2rem;
-    border-radius: 3px;
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     text-align: center;
     align-items: center;
     min-height: none;
